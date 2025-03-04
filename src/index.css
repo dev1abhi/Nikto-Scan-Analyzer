@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-green-400;
+  font-family: 'Courier New', monospace;
+}
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-2xl font-bold text-green-500 mt-6 mb-4;
+}
+
+.prose h2 {
+  @apply text-xl font-bold text-green-400 mt-5 mb-3;
+}
+
+.prose h3 {
+  @apply text-lg font-bold text-green-300 mt-4 mb-2;
+}
+
+.prose h4 {
+  @apply text-base font-bold text-green-200 mt-3 mb-2;
+}
+
+.prose p {
+  @apply my-2 text-green-300;
+}
+
+.prose ul {
+  @apply list-disc pl-6 my-3 text-green-300;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 my-3 text-green-300;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+.prose strong {
+  @apply font-bold text-green-400;
+}
+
+.prose em {
+  @apply italic text-green-200;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-green-700 pl-4 py-1 my-3 text-green-400 bg-gray-800;
+}
+
+.prose code {
+  @apply bg-gray-800 px-1 py-0.5 rounded text-green-400 font-mono;
+}
+
+.prose pre {
+  @apply block bg-gray-800 p-3 rounded my-3 overflow-x-auto border border-green-900;
+}
+
+.prose a {
+  @apply text-green-400 hover:text-green-300 underline;
+}
+
+.prose table {
+  @apply min-w-full border border-green-900 my-4;
+}
+
+.prose thead {
+  @apply bg-gray-800;
+}
+
+.prose tbody {
+  @apply divide-y divide-green-900;
+}
+
+.prose tr {
+  @apply hover:bg-gray-800;
+}
+
+.prose th {
+  @apply px-4 py-2 border-b border-green-900 text-left font-semibold text-green-400;
+}
+
+.prose td {
+  @apply px-4 py-2 border-b border-green-900 text-green-300;
+}
+
+/* Severity-specific styling */
+.severity-critical {
+  @apply text-red-500 font-bold;
+}
+
+.severity-high {
+  @apply text-red-400 font-semibold;
+}
+
+.severity-medium {
+  @apply text-yellow-400 font-semibold;
+}
+
+.severity-low {
+  @apply text-blue-400 font-semibold;
+}
+
+.remediation {
+  @apply text-green-400 font-semibold;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-green-700 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-600;
+}
+
+/* Terminal-like blinking cursor effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '|';
+  @apply text-green-400;
+  animation: blink 1s step-end infinite;
+}
